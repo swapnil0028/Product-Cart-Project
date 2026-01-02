@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f1f5f9;
+}
+
+/* Main background wrapper */
+.bg-wrapper {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Color blobs */
+.bg-wrapper::before,
+.bg-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.7;
+  z-index: 0;
+}
+
+/* Left blob */
+.bg-wrapper::before {
+  background: #818cf8; /* indigo */
+  top: -150px;
+  left: -150px;
+}
+
+/* Right blob */
+.bg-wrapper::after {
+  background: #f472b6; /* pink */
+  bottom: -150px;
+  right: -150px;
+}
+
+/* Extra blob */
+.bg-blob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: #c084fc; /* purple */
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.6;
+  bottom: -100px;
+  left: 30%;
+  z-index: 0;
+}
+
+/* App content stays above background */
+.app-container {
+  position: relative;
+  z-index: 1;
+  padding: 40px;
+}
